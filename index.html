@@ -23,24 +23,20 @@
             <input id="input-audio-url" type="text" value="">
         </label>
     </div>
-    <div class="container">
-        <label>
-            Transcript type is 
-            <select id="transcript-type-select">
-                <option value="rttm">RTTM</option>
-                <option value="json">JSON</option>
-            </select>
-        </label>
-    </div>
     <!-- Button to add more transcript -->
     <div class="container" id="transcript-container">
         <button id="add-transcript-button" onclick="addTranscriptInput()">+</button>
         <div id="transcript-inputs">
-            <label>
-                Transcript URL:
-                <input type="text" value="">
-            </label>
-        </div>
+            <div id="transcript-div-0">
+                <label>
+                    Transcript URL:
+                    <input id="transcript-input-0" type="text" value="">
+                </label>
+                <select id="transcript-type-select-0">
+                    <option value="rttm">RTTM</option>
+                    <option value="json">JSON</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="container">
