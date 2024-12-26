@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gecko URL Generator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Gecko URL Generator</h1>
+    </div>
+    <div class="container">
+        <label>
+            Base URL:
+            <input id="input-base-url" type="text" value="">
+        </label>
+    </div>
+    <div class="container">
+        <label>
+            Audio URL:
+            <input id="input-audio-url" type="text" value="">
+        </label>
+    </div>
+    <div class="container">
+        <label>
+            Transcript type is 
+            <select id="transcript-type-select">
+                <option value="rttm">RTTM</option>
+                <option value="json">JSON</option>
+            </select>
+        </label>
+    </div>
+    <!-- Button to add more transcript -->
+    <div class="container" id="transcript-container">
+        <button id="add-transcript-button" onclick="addTranscriptInput()">+</button>
+        <div id="transcript-inputs">
+            <label>
+                Transcript URL:
+                <input type="text" value="">
+            </label>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <button id="generate-button" onclick="generateURL()">Generate!</button>
+        <label>
+            <textarea id="output-url"></textarea>
+        </label>
+    </div>
+</body>
+</html>
