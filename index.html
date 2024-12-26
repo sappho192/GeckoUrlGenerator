@@ -12,37 +12,43 @@
         <h1>Gecko URL Generator</h1>
     </div>
     <div class="container">
-        <label>
-            Base URL:
-            <input id="input-base-url" type="text" value="">
-        </label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Base URL:</span>
+            </div>
+            <input id="input-base-url" type="text" value="" class="form-control">
+        </div>
     </div>
     <div class="container">
-        <label>
-            Audio URL:
-            <input id="input-audio-url" type="text" value="">
-        </label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Audio URL:</span>
+            </div>
+            <input id="input-audio-url" type="text" value="" class="form-control">
+        </div>
     </div>
     <!-- Button to add more transcript -->
     <div class="container" id="transcript-container">
-        <button id="add-transcript-button" onclick="addTranscriptInput()">+</button>
+        <button id="add-transcript-button" class="btn btn-primary" onclick="addTranscriptInput()">+</button>
         <div id="transcript-inputs">
-            <div id="transcript-div-0">
-                <label>
-                    Transcript URL:
-                    <input id="transcript-input-0" type="text" value="">
-                </label>
-                <select id="transcript-type-select-0">
-                    <option value="rttm">RTTM</option>
-                    <option value="json">JSON</option>
-                </select>
+            <div id="transcript-div-0" class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Transcript URL:</span>
+                </div>
+                <input id="transcript-input-0" type="text" value="" class="form-control">
+                <div class="input-group-append">
+                    <select id="transcript-type-select-0" class="form-control">
+                        <option value="rttm">RTTM</option>
+                        <option value="json">JSON</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <button id="generate-button" onclick="generateURL()">Generate!</button>
+        <button id="generate-button" onclick="generateURL()" class="btn btn-primary">Generate!</button>
         <label>
-            <textarea id="output-url" style="width: 400px;height: 250px;"></textarea>
+            <textarea id="output-url" style="width: 400px;height: 250px;" class="form-control"></textarea>
         </label>
     </div>
 </body>

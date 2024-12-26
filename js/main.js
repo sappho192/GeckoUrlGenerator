@@ -3,17 +3,22 @@ var inputIndex = 1;
 addTranscriptInput = () => {
     const transcriptDiv = document.createElement("div");
     transcriptDiv.id = `transcript-div-${inputIndex}`;
+    transcriptDiv.className = "input-group mb-3";
 
-    const transcriptLabel = document.createElement("label");
-    transcriptLabel.innerText = "Transcript URL: ";
+    const transcriptPrepend = document.createElement("div");
+    transcriptPrepend.className = "input-group-prepend";
+    transcriptPrepend.innerHTML = "<span class=\"input-group-text\" id=\"inputGroup-sizing-default\">Transcript URL:</span>";
+    transcriptDiv.appendChild(transcriptPrepend);
+
     const transcriptInput = document.createElement("input");
     transcriptInput.type = "text";
     transcriptInput.id = `transcript-input-${inputIndex}`;
-    transcriptLabel.appendChild(transcriptInput);
-    transcriptDiv.appendChild(transcriptLabel);
+    transcriptInput.className = "form-control";
+    transcriptDiv.appendChild(transcriptInput);
 
     const transcriptTypeSelect = document.createElement("select");
     transcriptTypeSelect.id = `transcript-type-select-${inputIndex}`;
+    transcriptTypeSelect.className = "form-control";
     const rttmOption = document.createElement("option");
     rttmOption.value = "rttm";
     rttmOption.innerText = "RTTM";
@@ -22,7 +27,11 @@ addTranscriptInput = () => {
     jsonOption.innerText = "JSON";
     transcriptTypeSelect.appendChild(rttmOption);
     transcriptTypeSelect.appendChild(jsonOption);
-    transcriptDiv.appendChild(transcriptTypeSelect);
+    
+    const transcriptAppend = document.createElement("div");
+    transcriptAppend.className = "input-group-append";
+    transcriptAppend.appendChild(transcriptTypeSelect);
+    transcriptDiv.appendChild(transcriptAppend);
 
     document.querySelector("#transcript-inputs").appendChild(transcriptDiv);
     inputIndex++;
